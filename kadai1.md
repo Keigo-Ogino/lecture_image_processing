@@ -1,6 +1,6 @@
 # 課題１レポート（サンプル）
 
-標準画像「Lenna」を原画像とする．この画像は縦512画像，横512画素による正方形のディジタルカラー画像である．
+標準画像「hakutyou」を原画像とする．この画像は縦1066画像，横1600画素によるディジタルカラー画像である．
 
 ORG=imread('hakutyou.png'); % 原画像の入力  
 imagesc(ORG); axis image; % 画像の表示
@@ -20,10 +20,10 @@ IMG2 = imresize(IMG,2,'box'); % 画像の拡大
 ![原画像](https://github.com/Keigo-Ogino/lecture_image_processing/blob/master/new%20kadai%EF%BC%91/1_2.jpg)  
 図2 1/2サンプリング
 
-同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．すなわち，
+同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，4倍に拡大すればよい．すなわち，
 
 IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+IMG2 = imresize(IMG,4,'box'); % 画像の拡大
 
 とする．1/4サンプリングの結果を図３に示す．
 
@@ -33,7 +33,7 @@ IMG2 = imresize(IMG,2,'box'); % 画像の拡大
 1/8から1/32サンプリングは，
 
 IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+IMG2 = imresize(IMG,x,'box'); % 画像の拡大(x=8,16,32)
 
 を繰り返す．サンプリングの結果を図４～６に示す．
 
